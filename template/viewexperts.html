@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+
+	<!---page Title --->
+	<section class="bg-img pt-150 pb-20" data-overlay="7" style="background-image: url({%static 'images/front-end-img/background/bg-8.jpg'%});">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="text-center">						
+						<h2 class="page-title text-white">Experts</h2>
+						<ol class="breadcrumb bg-transparent justify-content-center">
+							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+							<li class="breadcrumb-item text-white active" aria-current="page">Experts</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!--Page content -->
+    <div class="container">
+    <div class="row pt-5">
+
+{% for i in data %}
+<div class="col-md-4 pt-5">
+<div class="card shadow" style="width: 23rem;">
+    <img src="{{i.profile_pic.url}}" class="card-img-top" alt="image" height =250px>
+    <div class="card-body">
+		
+      <h5 class="card-title">{{i.FullName}}</h5>
+      <h6 class="card-text">{{i.jobTitle}}</h6>
+	  <p class="card-text">{{i.description|truncatechars:200}}</p>
+	  <a href ="{% url 'expert1' id=i.id %}" >Show more on this artist</a>
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+    </div></div>
+
+{% endblock %}

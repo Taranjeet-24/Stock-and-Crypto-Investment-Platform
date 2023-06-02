@@ -1,0 +1,42 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<div class="container pt-5">
+    <div class="row pt-5" >
+        <div class="col-md-4"></div>
+        <div class="col-md-8 pt-5">
+        <form method="POST" action="{% url 'userlogin6' %} "class="text-justify text-center pt-6">
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+             </div>
+             <div class="form-group">
+                <select class="form-control" name="ticker"required="required" id="exampleFormControlSelect1">
+                <option value="">SELECT STOCKS</option>
+                <option value="FB">FACEBOOK</option>
+                <option value="XELA">Exela Technologies, Inc</option>
+                <option value="AAPL">APPLE</option>
+                <option value="BTC-USD">Bitcoin USD</option>
+                <option value="ETH-USD">Ethereum USD</option>
+                <option value="NOK">Nokia Corporation</option>
+                <option value="MSFT">Microsoft Corporation</option>
+                <option value="CSCO">Cisco Systems, Inc.</option>
+                <option value="TSLA">Tesla, Inc.</option>
+                <option value="INTC">Intel Corporation</option>
+                <option value="WMT">Walmart Inc.</option>
+                <option value="UBER">Uber Technologies, Inc.</option>
+                <option value="F">Ford Motor Company</option>
+                <option value="DOGE-USD">Dogecoin USD</option>
+                <option value="BCH-USD">BitcoinCash USD</option>
+                <option value="LTC-USD">Litecoin USD</option>
+                </select>
+            </div>
+              &nbsp;
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+        </form>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}

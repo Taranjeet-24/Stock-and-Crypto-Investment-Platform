@@ -1,0 +1,60 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<div class="container pt-5">
+    <div class="row pt-5" >
+        <div class="col-md-4"></div>
+        <div class="col-md-8 pt-5">
+        <form method="POST" action="{% url 'userlogin5' %} "class="text-justify text-center pt-6">
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+             </div>
+             <div class="form-group">
+                <select class="form-control" name="stocks" id="exampleFormControlSelect1">
+                <option value="">SELECT STOCKS</option>
+                <option value="ADANIPORTS">ADANI PORTS</option>
+                <option value="ASIANPAINT">ASIAN PAINT</option>
+                <option value="AXISBANK">AXIS BANK</option>
+                <option value="BAJAJ-AUTO">BAJAJ-AUTO</option>
+                <option value="BAJFINANCE">BAJAJ FINANCE</option>
+                <option value="BHARTIARTL">BHARTI AIRTEL</option>
+                <option value="BPCL">BPCL</option>
+                <option value="BRITANNIA">BRITANNIA</option>
+                <option value="CIPLA">CIPLA</option>
+                <option value="DRREDDY">DR.REDDY</option>
+                <option value="HCLTECH">HCLTECH</option>
+                <option value="HDFC">HDFC</option>
+                <option value="HDFCBANK">HDFCBANK</option>
+                <option value="HEROMOTOCO">HERO MOTO CORP</option>
+                <option value="HINDUNILVR">HINDUSTAN UNILVER</option>
+                <option value="ICICIBANK">ICICI BANK</option>
+                <option value="INDUSINDBK">INDUSINDBK</option>
+                <option value="INFY">INFY</option>
+                <option value="KOTAKBANK">KOTAK BANK</option>
+                <option value="MARUTI">MARUTI</option>
+                <option value="NESTLEIND">NESTLE INDIA</option>
+                <option value="RELIANCE">RELIANCE</option>
+                <option value="SBIN">STATE BANK OF IDIAN</option>
+                <option value="TATAMOTORS">TATA MOTORS</option>
+                <option value="TATASTEEL">TATA STEEL</option>
+                <option value="TCS">TATA CONSULTANCY SERVICES</option>
+                <option value="TECHM">TECH MAHINDRA</option>
+                <option value="TITAN">TITAN</option>
+                <option value="ULTRACEMCO">ULTRACEMCO</option>
+                <option value="WIPRO">WIPRO</option>
+                </select>
+            </div>
+             <div class="form-group">
+                <input type="text" name="yearss" class="form-control" placeholder="PREDICITON YEAR" style="color:white;">
+                
+             </div>
+                &nbsp;
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+        </form>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}

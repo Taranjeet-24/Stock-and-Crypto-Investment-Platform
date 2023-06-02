@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+	<!---page Title --->
+	<section class="bg-img pt-150 pb-20" data-overlay="7" style="background-image: url({%static 'images/front-end-img/background/bg-8.jpg'%});">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="text-center">						
+						<h2 class="page-title text-white">Stock Guide</h2>
+						<ol class="breadcrumb bg-transparent justify-content-center">
+							<li class="breadcrumb-item"><a href="#" class="text-white-50"><i class="mdi mdi-home-outline"></i></a></li>
+							<li class="breadcrumb-item text-white active" aria-current="page">Stock Guide</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!--Page content -->
+    <div class="container">
+    <div class="row pt-5 mt-5">
+
+		{% for i in data %}
+	
+		<div class="col-md-12 p-5  border shadow"style="margin-top:7px">
+			<details>
+				<summary style="font-size:22px">{{i.questions}}</summary>
+			
+		
+				<p class="">{{i.answers}}</p>
+			  
+			  
+			</details>
+			</div>
+		 
+		{% endfor %}
+    </div></div>
+{% endblock %}

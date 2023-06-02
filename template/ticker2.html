@@ -1,0 +1,44 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<style>
+    table, th, td {
+  border: 1px solid white;
+    }
+    th, td {
+        padding: 6px;
+    }
+</style>
+<div class="container pt-5">
+        <div class="row pt-5" >
+            <div class="col-md-4"></div>
+            <div class="col-md-8 pt-5">
+            <form method="POST" action="{% url 'userlogin6' %} "class="text-justify text-center pt-6">
+                <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                 </div></form><br><br>
+LIVE RATES
+<table style="width:100%">
+    <tr>
+        <th>Time</th>
+        <th>Date</th> 
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+      </tr>
+{% for x in s %}
+
+<tr>
+    <td> {{x.7}}   </td>
+    <td> {{x.6}}   </td>
+    <td> {{x.1}}   </td> 
+    <td> {{x.2}}   </td>
+    <td> {{x.3}}   </td>
+    <td> {{x.4}}   </td>
+				
+                </tr>
+				{% endfor %}
+            </table>
+{% endblock %}
